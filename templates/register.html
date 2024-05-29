@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Register page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <style>
+    body {
+      background-color: green;
+    }
+    .container {
+      margin-top: 50px;
+    }
+    h2 {
+      color: black;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-control {
+      border-color: #007bff;
+    }
+    .btn-primary {
+      background-color: #007bff;
+      border-color: #007bff;
+      margin-right: 10px;
+    }
+    .btn-dark {
+      background-color: #343a40;
+      border-color: #343a40;
+    }
+    .btn-primary:hover, .btn-dark:hover {
+      opacity: 0.8;
+    }
+    .error-message {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-sm-6 mt-4">
+            <h2>Register form</h2>
+            <form id="registrationForm" action="/register" method="POST">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" class="form-control" id="name" placeholder="Enter name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" required>
+                    <div id="emailErrorMessage" class="error-message"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="pwd">Password:</label>
+                    <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="password" required>
+                </div>
+
+                <button type="submit" class="btn btn-dark">Submit</button>
+                <a href="/login" class="btn btn-primary">Login</a>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+  document.getElementById('registrationForm').addEventListener('submit', function(event) {
+    var emailInput = document.getElementById('email');
+    var email = emailInput.value.trim();
+
+    // Check if the email is already registered (Simulated client-side validation)
+    if (email === 'existing@example.com') {
+      event.preventDefault(); // Prevent form submission
+      document.getElementById('emailErrorMessage').textContent = 'This email is already registered.';
+      return false;
+    }
+
+    return true; // Allow form submission
+  });
+</script>
+
+</body>
+</html>

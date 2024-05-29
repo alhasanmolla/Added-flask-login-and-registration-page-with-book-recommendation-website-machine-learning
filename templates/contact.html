@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: green;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 800px;
+            box-sizing: border-box;
+            margin: 20px;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        .contact-info, .contact-form {
+            margin: 20px 0;
+        }
+        .contact-info {
+            text-align: center;
+        }
+        .contact-info h2 {
+            margin: 0 0 10px 0;
+        }
+        .contact-info p {
+            margin: 5px 0;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        textarea {
+            height: 100px;
+            resize: vertical;
+        }
+        button {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+            align-self: flex-start;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+        }
+        li {
+            color: green;
+            margin-right: 10px;
+        }
+        li a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            display: block;
+        }
+        li a:hover {
+            background-color: #0056b3;
+        }
+        .navbar {
+            background-color: #00a65a;
+            padding: 10px;
+            border-radius: 8px;
+        }
+        .navbar-brand {
+            font-size: 1.5em;
+            color: white;
+            margin-right: auto;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar">
+            <a class="navbar-brand" href="#">My Book Recommender</a>
+            <ul class="nav navbar-nav">
+                <li><a href="/index">Home</a></li>
+                <li><a href="/recommend">Recommend</a></li>
+                <li><a href="/contact">Contact</a></li>
+                <li><a href="/login">Logout</a></li>
+            </ul>
+        </nav>
+        <div class="contact-form">
+            <h1>Contact Us</h1>
+            <form action="/contact" method="POST">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+                
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+

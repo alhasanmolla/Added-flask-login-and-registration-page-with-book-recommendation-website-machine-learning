@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centered Image</title>
+    <style>
+        .center {
+            text-align: center;
+        }
+            .title-container {
+            text-align: center; /* Center-align inline content within the container */
+        }
+        .centered-title {
+            margin: 0 auto; /* Center the block-level element horizontally */
+            width: 50%; /* Optionally, set a width to control the centering area */
+        }
+    </style>
+</head>
+    <body>
+        <div class="title-container">
+            <h1 class="centered-title" style="background: springgreen;">This book cannot be found here</h1>
+            <h1 class="centered-title" style="
+                    background: cadetblue;">Please read other books and get knowledge and fun</h1>
+                    
+        </div>
+        <div class="center">
+        <!-- Displaying an image -->
+        <img src="{{ url_for('static', filename='stock.jpg') }}" width="500" height="600" alt="Centered Image">
+
+    </body>
+</html>
